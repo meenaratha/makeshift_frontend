@@ -56,13 +56,23 @@ function CancelBookingCard() {
            <CancelCard/>
 
             <div className='booking-box' style={{ margin: '0px', maxWidth: '100%', gap: '20px' }}>
-              <p style={{ color: '#000000' }}>Total Amount</p>
+              <div className='total-amount-box'>
+                <div className='book-status-box'>
+                <p style={{ color: '#000000' }}>Total Amount</p>
+                <div style={{ display:'flex',gap:'10px' ,alignItems:'center'}}>
+                <button className='user-cancel-btn' style={{ marginTop:'0px' }}>Canceled</button>
+                <button className='refund-btn'>Amount Refund</button>
+
+                </div>
+                </div>
               <div className='invoice-box'>
                 <p style={{ color: '#B51144' }}>&#8377; 4,000</p>
                 {/* <button className='invoice-btn'>
                   <Download /> Invoice Download
                 </button> */}
               </div>
+              </div>
+             
             </div>
           </div>
         )}
