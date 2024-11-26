@@ -1,5 +1,12 @@
 import EmployeeImg from '../assets/images/employeeimg.png';
+import { useNavigate } from 'react-router-dom';
 function EmployeeIndexbanner() {
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/employee-register');
+  };
+
   return (
     <>
       <div className='emp-banner-box'>
@@ -15,7 +22,7 @@ function EmployeeIndexbanner() {
                              breaches than single-service apps 
                              because of the multiple entry points for attackers</p>
                     </div>
-                    <button className='account-btn'><span>Create Account</span>  <i className="material-icons">arrow_forward</i></button>
+                    <button className='account-btn' onClick={handleButtonClick}><span>Create Account</span>  <i className="material-icons">arrow_forward</i></button>
                 </div>
                  {/* grid column */}
                 <div className='emp-grid-item' style={{ justifyContent:'end' }}>

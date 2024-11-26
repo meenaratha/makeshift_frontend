@@ -35,6 +35,21 @@ import PrizelessProductDescription from './components/PrizelessProductDescriptio
 import SlotBookedPage from './pages/SlotBookedPage';
 import EmployeeIndex from './pages/EmployeeIndex';
 import EmployeeRegisterPgae from './pages/EmployeeRegisterPgae';
+import EmployeeLoginPage from './pages/EmployeeLoginPage';
+import ServiceUpload from './components/ServiceUpload';
+import EmployeeHome from './pages/EmployeeHome';
+import EmpEditPage from './pages/EmpEditPage';
+import EmpNotification from './pages/EmpNotification';
+import EmpPasswordChange from './pages/EmpPasswordChange';
+import EmpPrivacyPolicy from './pages/EmpPrivacyPolicy';
+import EmpReportQuery from './pages/EmpReportQuery';
+import EmpEarnings from './pages/EmpEarnings';
+import BookingListPage from './pages/BookingListPage';
+import EmployeeCompleted from './pages/EmployeeCompleted';
+import EmployeeCancelPage from './pages/EmployeeCancelPage';
+import EmployeePDEnquiryPage from './pages/EmployeePDEnquiryPage';
+import PDDeliveryPopup from './components/PDDeliveryPopup';
+import EmployeeServiceEditPage from './pages/EmployeeServiceEditPage';
 
 function App() {
   return (
@@ -85,6 +100,29 @@ function App() {
 
           <Route path="/employee-index" element={<EmployeeIndex/>} />
           <Route path="/employee-register" element={<EmployeeRegisterPgae/>} />
+          <Route path="/employee-login" element={<EmployeeLoginPage/>} />
+          <Route path="/service-upload" element={<ServiceUpload/>} />
+          <Route path="/employee-home" element={<EmployeeHome/>} />
+          <Route path="/employee-edit-profile" element={<EmpEditPage/>} />
+          <Route path="/employee-notification" element={<EmpNotification/>} />
+          <Route path="/employee-service-edit" element={<EmployeeServiceEditPage/>} />
+          <Route path="/employee-change-password" element={<EmpPasswordChange/>} />
+          <Route path="/employee-privacy-policy" element={<EmpPrivacyPolicy/>} />
+          <Route path="/employee-report-query" element={<EmpReportQuery/>} />
+          <Route path="/employee-earnings" element={<EmpEarnings/>} />
+         
+          <Route path="/employee-booking-list" element={<BookingListPage/>} />
+          <Route path="/employee-booking-completed" element={<EmployeeCompleted/>} />
+
+          <Route path="/employee-booking-cancel" element={<EmployeeCancelPage/>} />
+
+          <Route path="/employee-booking-pdenquiery" element={<EmployeePDEnquiryPage/>} />
+
+          <Route path="/pd-delivery-popup" element={<PDDeliveryPopup/>} />
+
+
+
+
 
 
 

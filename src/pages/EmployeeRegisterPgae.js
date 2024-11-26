@@ -5,6 +5,9 @@ function EmployeeRegisterPgae() {
   return (
     <>
   <EmployeeRegisterForm/>
+  
+
+
     </>
   )
 }

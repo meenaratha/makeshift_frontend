@@ -27,7 +27,7 @@ function CompleteBookingPage() {
               
               <div className='booking-card-box' style={{ maxWidth:'100%' }}>
                  <div className=' '>
-                  <CompletedBookingCard/>
+                <CompletedBookingCard/>
                  </div>
               </div>
 

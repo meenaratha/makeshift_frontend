@@ -18,7 +18,31 @@
   padding: 10px;
   box-sizing: border-box;  /* Include padding in the width/height calculation */
   }
-  
+  .pddelivery-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000AD;
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 20px;
+  }
+
+  .pddelivery-box{
+    
+
+    /* Positioning for absolute centering */
+    position: absolute;
+    top: 100px; /* 90px from the top */
+    left: 50%;
+    transform: translateX(-50%); /* Horizontal centering */
+}
+
   /* Modal Content */
   .feedback-modal-content {
     background-color: #fff;

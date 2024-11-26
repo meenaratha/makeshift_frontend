@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/components/popup.css';
 import NoteCross from '../assets/images/noteclose.svg'
-function NotePopup() {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+function EmpRegSubmitNote() {
+    const [isModalOpen, setIsModalOpen] = useState(true);
 
   const closeModal = () => {
     setIsModalOpen(false);
@@ -20,7 +20,7 @@ function NotePopup() {
 
   return (
     <>
-      {isModalOpen && (
+       {isModalOpen && (
         <div className="note-modal active" id="notification-modal"  onClick={closeModal}>
           <div className="note-modal-content">
             {/* Header Section with Logo and Close Button */}
@@ -50,7 +50,7 @@ function NotePopup() {
         </div>
       )}
     </>
-  );
+  )
 }
 
-export default NotePopup;
+export default EmpRegSubmitNote

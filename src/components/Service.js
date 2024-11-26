@@ -5,6 +5,7 @@ import Mentor from '../assets/images/mentor.png';
 import PDenquiry from '../assets/images/pd_enquiry.png';
 import React, { useState } from 'react';
 import ServicePopup from './ServicePopup';
+import PDDeliveryPopup from './PDDeliveryPopup';
 
 
 function Service() {
@@ -18,6 +19,12 @@ function Service() {
     setIsServicePopupOpen(false); // Close the popup when close button is clicked
   };
 
+
+  const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const handlePopupToggle = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
   return (
     <>
      <section className='service-cont'>
@@ -54,12 +61,15 @@ function Service() {
            </div>
 
             {/* service item */}
-            <div className='service-item'  onClick={handleServiceClick}>
+            <div className='service-item'  onClick={handlePopupToggle}>
             <div className='service-img'>
             <img src={PDenquiry} />
             </div>
               <p className='card-sub-head' >P & D enquiry</p>
            </div>
+
+             {/* Conditionally render the popup */}
+       {isPopupVisible && <PDDeliveryPopup />}
        </div>
     </section>
 

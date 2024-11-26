@@ -1122,21 +1122,7 @@ padding: 10px;
   font-size: 14px;
   font-weight: 700;
 }
-.user-complete-btn , .user-cancel-btn{
-  background-color: #D6D3FF;
-  color: #070154;
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  border-radius: 5px;
-  padding: 4px 10px;
- 
-  cursor: pointer;
-}
-.user-cancel-btn{
-  background-color: #D6D3FF;
-  color: #070154;
-}
+
 .complete-booking-image {
   position: relative;
   width: 90px;
@@ -1275,7 +1261,7 @@ font-weight: 400;
   font-weight: 500;
   
 }
-.error-text {
+.error-text ,.error {
   color: #c71c2c;
   font-size: 12px;
   text-align: left;
@@ -1649,6 +1635,9 @@ padding: 20px;
 /* EMPLOYEE FLOW */
 .emp-register-container {
   padding: 40px 10px;
+  width: 100%;
+    height: 100%;
+    overflow-x: hidden;
 }
 
 .emp-register-box {
@@ -1663,10 +1652,11 @@ padding: 20px;
 
 .emp-reg-grid-box {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr); 
   gap: 20px;
   width: 100%;
   height: 100%;
+  grid-template-columns: minmax(0, 490px) minmax(0, 755px);
 }
 
 .emp-reg-grid-item {
@@ -1681,7 +1671,8 @@ padding: 20px;
 }
 
 .emp-reg-grid-item-form {
-  width: 755px;
+ 
+  width: 100%;
 }
 
 .emp-sticky-img {
@@ -1781,12 +1772,13 @@ padding: 20px;
 .emp-sign-up-btn {
   background-color: #d32f2f;
   color: #fff;
-  padding: 10px 20px;
+  padding: 10px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 14px;
+  font-weight: 800;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -1794,9 +1786,17 @@ padding: 20px;
   background-color: #b71c1c;
   transform: translateY(-2px);
 }
+.emp-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  width: 100%;
+  gap: 20px; /* Adjust the space between columns as needed */
+}
+
+
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 998px) {
   .emp-reg-grid-box {
     grid-template-columns: 1fr;
     place-items: center;
@@ -1817,6 +1817,18 @@ padding: 20px;
     font-size: 14px;
   }
 }
+.emp-input-field::placeholder{
+  font-size: 12px;
+}
+@media (max-width: 778px) {
+  .emp-row {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+  .emp-input-field {
+    max-width: 360px;
+    min-width: 300px;
+  }
+}
 .emp-custom-checkbox {
    position: relative; 
    width: 25px; height: 25px;
@@ -1832,3 +1844,637 @@ padding: 20px;
     .emp-reg-grid-item-img{
       display: block;
     }
+
+    .emp-input-field[type="date"]::-webkit-calendar-picker-indicator {
+       color: #aaa;
+       }
+        .emp-input-field[type="date"]::-webkit-input-placeholder {
+           color: #aaa; 
+          }
+           .emp-input-field[type="select"]::-webkit-input-placeholder { 
+            color: #aaa; 
+          }
+          .emp-select-field {
+             position: relative;
+              display: inline-block;
+             }
+              .emp-select-field::after { 
+                content: '\25BC'; /* Unicode for down arrow */ 
+                position: absolute; 
+                right: 10px; top: 50%; 
+                transform: translateY(-50%); 
+                pointer-events: none; color: #aaa;
+              } .emp-select-field select {
+                 -webkit-appearance: none; 
+                 -moz-appearance: none; appearance: none;
+                  padding-right: 30px; /* Space for the down arrow */ }
+                 .emp-input-field.select select { 
+                  padding-right: 30px; /* Space for the down arrow */
+                 }
+                
+                 /* service upload page */
+                 .service-upload-container{
+                  width: 100%;
+                    height: 100%;
+                    /* display: flex;
+                    justify-content: center; */
+                    /* align-items: center; */
+                  padding: 10px 10px !important;
+                }
+                
+                .service-upload-box {
+                  background-color: #fff;
+                  border: 0.85px solid rgba(218, 218, 218, 1);
+                  border-radius: 10px;
+                  color: #fff; /* Ensure text color is readable against the background */
+                  /* height: 620px; */
+                  max-width: 1200px;
+                  width: 100%; /* Make it responsive */
+                  box-shadow: 5.93px 5.08px 18.03px 0px rgba(102, 102, 102, 0.25);
+                  margin: 20px auto;
+                }    
+                
+             .service-upload-head{
+              font-family: Poppins;
+font-size: 24px;
+font-weight: 700;
+line-height: 23.15px;
+letter-spacing: 0.5529636144638062px;
+text-align: center;
+color: rgba(11, 10, 10, 1);
+padding-bottom: 30px;
+padding-top: 10px;
+             }  
+                
+                .service-upload-row {
+                  display: grid;
+                  gap: 20px; /* Adjust the gap between the grid items */
+                  grid-template-columns: repeat(3, 1fr); /* Default: 3 columns */
+                  
+                }
+                .service-upload-row > div {
+                  max-width: 360px; /* Maximum width for each grid item */
+                  width: 100%; /* Ensures items don't exceed 100% of their container */
+                }
+                @media (max-width: 768px) {
+                  .service-upload-row {
+                    grid-template-columns: 1fr; /* 1 column for mobile devices */
+                  }
+                  .service-upload-box{
+                    padding: 30px 20px ;
+                  } 
+                  .service-upload-row > div {
+                    max-width: 100%; /* Maximum width for each grid item */
+                    width: 100%; /* Ensures items don't exceed 100% of their container */
+                  }               
+                     
+                }
+                
+                @media (max-width: 568px) {
+                  .service-upload-row {
+                    grid-template-columns: 1fr; /* 1 column for mobile devices */
+                  }
+                  .service-upload-box{
+                    padding: 30px 10px ;
+                  }                
+                     
+                }
+.service-upload-box{
+  padding: 30px 30px ;
+}                
+                
+                .service-upload-column {
+                  flex: 1;
+                }
+                
+                .service-upload-field {
+                  margin-bottom: 15px;
+                }
+                
+                .service-upload-field label {
+                  display: block;
+                  margin-bottom: 5px;
+                  font-family: Inter;
+font-size: 16px;
+font-weight: 800;
+line-height: 32.8px;
+letter-spacing: 0.800000011920929px;
+color: rgba(0, 0, 0, 1);
+
+                }
+                
+                .service-upload-input,
+                .service-upload-select {
+                  width: 100%;
+                  padding: 10px;
+                  border: 1px solid rgba(228, 228, 228, 1);
+                  background: rgba(249, 249, 249, 1);
+                  border-radius: 10px;
+                  font-size: 14px;
+                  color: rgba(0, 0, 0, 1);
+
+                }
+                
+                .service-upload-input::placeholder,
+                .service-upload-select::placeholder,
+                .service-upload-select::placeholder,
+                .service-upload-field select {
+                  font-family: Inter;
+font-size: 12.8px;
+font-weight: 500;
+line-height: 21.87px;
+letter-spacing: 0.5333333611488342px;
+color: rgba(0, 0, 0, 1);
+
+                }
+                
+                .service-upload-file-wrapper {
+                  position: relative;
+    width: 100%;
+    border: 1px solid rgba(228, 228, 228, 1);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    background: rgba(249, 249, 249, 1);
+                }
+                
+                .service-upload-icon {
+                  margin-right: 10px;
+                  color: rgba(0, 0, 0, 1);
+                }
+                
+                .service-upload-file {
+                  display: none;
+                }
+                
+                .service-upload-file-wrapper .service-upload-file-name {
+                  font-size: 14px;
+                  color: rgba(0, 0, 0, 1);
+                  margin-left: 10px;
+                  font-family: Inter;
+font-size: 12.8px;
+font-weight: 500;
+line-height: 21.87px;
+letter-spacing: 0.5333333611488342px;
+
+
+                }
+                .service-upload-checkbox-wrapper label{
+                  font-family: Inter;
+font-size: 16px;
+font-weight: 700;
+line-height: 22px;
+letter-spacing: 0.5628435611724854px;
+text-align: left;
+color: rgba(65, 65, 65, 1);
+
+                }
+                
+                .service-upload-checkbox-wrapper {
+                  display: flex;
+                  align-items: center;
+                }
+                
+                .service-upload-checkbox {
+                  margin-right: 10px;
+                }
+                .service-submit-box{
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                }
+                .service-upload-button {
+                  background-color: rgba(181, 17, 68, 1);
+                  color: #fff;
+                  padding: 10px 30px;
+                  border: none;
+                  border-radius: 20px;
+                  font-size: 16px;
+                  cursor: pointer;
+                  margin-top: 10px;
+                  width: 150px;
+                }
+                
+                .service-upload-button:hover {
+                  background-color: rgba(181, 17, 68, 1);
+                }
+                
+                @media (max-width: 768px) {
+                  .service-upload-box {
+                    padding: 15px;
+                  }
+                
+                  .service-upload-row {
+                    flex-direction: column;
+                  }
+                
+                  .service-upload-column {
+                    margin-bottom: 20px;
+                  }
+                
+                  .service-upload-field label {
+                    font-size: 12px;
+                  }
+                
+                  .service-upload-input,
+                  .service-upload-select,
+                  .service-upload-file-wrapper {
+                    padding: 8px;
+                  }
+                
+                  .service-upload-button {
+                    font-size: 14px;
+                    padding: 8px 16px;
+                  }
+                }
+                /*employee earning page  */
+.earning-container{
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 20px;
+  padding-bottom: 20px;
+ }    
+ .earning-title-box{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  padding: 10px 20px;
+  /* flex-wrap: wrap; */
+gap: 10px;
+ }            
+ .earning-title-box h2{
+  color:rgba(0, 0, 0, 1);
+  font-family: Poppins;
+font-size: 24.6px;
+font-weight: 800;
+line-height: 35.68px;
+letter-spacing: 0.9127970933914185px;
+
+
+ }
+ .month-list-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+ }
+ .month-list-box p,
+ .month-list-box span {
+  color: rgba(0, 0, 0, 1);
+font-size: 16.89px;
+font-weight: 800;
+line-height: 19.48px;
+letter-spacing: 0.6852561831474304px;
+text-wrap-mode: nowrap;
+
+ }
+ .month-list-box span {
+  font-size: 25px;
+ }
+
+
+ @media screen and (max-width:568px) {
+  .earning-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+   } 
+ }
+
+
+ /* Basic styling for the container and table */
+.earning-table-container {
+  width: 100%;
+  overflow: auto;
+  margin: 20px 0;
+  max-height: 460px;  /* Set maximum height to 460px */
+  /* scrollbar-width: thin; */
+}
+
+.earning-table-table {
+  width: 100%;
+  border-collapse: collapse;
+  /* border: 1px solid #ddd; */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 10px 10px 0 0; /* Round the top corners */
+  border-radius: 20px;
+}
+
+.earning-table-header {
+ 
+  padding: 12px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 800;
+ color: rgba(0, 0, 0, 1); 
+}
+.earning-table-table thead{
+  background-color:rgba(243, 243, 243, 1);
+  /* border: 1.07px solid rgba(223, 223, 223, 1); */
+  border-radius: 20px;
+  position: sticky; /* Make header sticky */
+  top: 0; /* Stick to the top of the container */
+  z-index: 1; /* Ensure the header stays on top */
+  border-radius: 10px 10px 0 0; /* Round the top corners */
+}
+
+.earning-table-cell {
+  padding: 12px;
+  text-align: left;
+  /* border-bottom: 1px solid #ddd; */
+  font-size: 11px;
+  color: rgba(0, 0, 0, 1);
+  font-weight: 800;
+}
+.earning-table-header,
+.earning-table-cell {
+    padding: 12px;
+    text-align: center;
+    border-right: 2px dotted rgba(212, 212, 212, 1);  /* Dotted vertical border */
+}
+.tabel-cell-profile{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+.earning-table-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.earning-table-invoice-link {
+  color: rgba(181, 17, 68, 1);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.earning-table-status {
+  font-weight: bold;
+}
+
+.earning-table-status.received {
+  color: rgba(10, 144, 39, 1);
+}
+
+.earning-table-status.pending {
+  color: rgba(255, 98, 0, 1);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .earning-table-table {
+      font-size: 11px;
+  }
+
+  .earning-table-header {
+      font-size: 13px;
+  }
+
+  .earning-table-cell {
+      padding: 8px;
+  }
+}
+/* WebKit browsers (Chrome, Safari) scrollbar styling */
+.earning-table-container::-webkit-scrollbar {
+  height: 8px; /* Set the height of the horizontal scrollbar */
+  width: 8px;  /* Set the width of the vertical scrollbar */
+}
+
+.earning-table-container::-webkit-scrollbar-track {
+  background: rgba(223, 223, 223, 1); /* Color of the track */
+}
+
+.earning-table-container::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 150, 150, 1); /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners of the thumb */
+}
+
+.earning-table-container::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(120, 120, 120, 1); /* Color when hovered */
+}
+
+
+/* swipe card */
+
+.emp-swipe-card{
+  max-width: 440px !important;
+}
+
+.emp-pack-detail-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
+  gap: 10px; /* Add some space between items */
+}
+.emp-pack-detail-item{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.emp-pack-detail-item p{
+font-size: 12px;
+font-weight: 700;
+color: rgba(0, 0, 0, 1);
+text-wrap-mode: nowrap;
+}
+.emp-pers-detail-box {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.emp-pers-detail-box li{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 6px;
+  align-items: center;
+}
+.emp-pers-detail-box li span{
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 1);
+  text-wrap-mode: nowrap;
+}
+.emp-pers-detail-box li p{
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(87, 87, 87, 1);
+}
+.emp-pack-detail-item span{
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(87, 87, 87, 1);
+}
+.emp-button-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  max-width: 440px;
+  padding: 20px 10px;
+}
+.emp-otp-btn , .emp-delete-btn{
+width: fit-content;
+height: 40px;
+padding: 0 30px;
+border-radius: 20px;
+background: rgba(181, 17, 68, 1);
+color: #fff;
+font-size: 12px;
+font-weight: 700;
+display: inline-flex;
+gap: 6px;
+justify-content: center;
+align-items: center;
+}
+.emp-cancel-btn , .emp-edit-btn{
+  width: fit-content;
+  height: 40px;
+  padding: 0 30px;
+  border-radius: 20px;
+  background: transparent;
+  color: rgba(181, 17, 68, 1);
+  font-size: 12px;
+  font-weight: 700;
+  border: 2.2px solid rgba(181, 17, 68, 1);
+  display: inline-flex;
+gap: 6px;
+justify-content: center;
+align-items: center;
+}
+@media screen and (max-width:568px) {
+  .emp-pack-detail-item p{
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 1);
+    text-wrap-mode: wrap;
+    }
+    .emp-pers-detail-box li{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+    }
+}
+
+
+/* employee booking pages */
+
+.emp-book-card-box{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px; /* Adjust the gap between columns as needed */
+  padding: 20px;
+  overflow-y: scroll;
+  max-height: 630px;
+}
+.emp-book-inner-box {
+  border-radius: 10px;
+}
+.slot-amount , 
+.invoice-btn ,
+.amount-number {
+  text-wrap-mode: nowrap;
+}
+
+.invoice-btn {
+display: flex;
+align-items: center;
+gap: 6px;
+justify-content: center;
+}
+.emp-complete-card
+{
+  max-width: 470px !important;
+}
+@media (max-width: 1400px) {
+  .emp-book-card-box {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px 0px;
+  }
+}
+/* Media query to make the grid 1 column on smaller screens */
+@media (max-width: 768px) {
+  .emp-book-card-box {
+    grid-template-columns: 1fr; /* Changes to 1 column */
+    padding: 20px 0px;
+    place-items: center;
+  }
+  .slot-amount ,
+  .invoice-btn ,.amount-number{
+    text-wrap-mode: wrap;
+  }
+}
+/* Target the horizontal scrollbar */
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+/* Style the scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Example background color */
+  border-radius: 30px;    
+}
+
+/* Style the scrollbar thumb */
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Example color for the scrollbar */
+  border-radius: 20px;     /* Optional: to give rounded corners */
+}
+
+/* Optional: on hover, change the color of the scrollbar thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.emp-completed-btn{
+  background-color: #fff;
+    color: #c00000;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    box-shadow: 0px 1.59px 1.75px 0px rgba(0, 0, 0, 0.25);
+    border: 1.59px solid rgba(254, 252, 252, 1);
+    background-color: #D6D3FF;
+    color: #070154;
+    font-size: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 4px 10px;
+}
+
+.user-complete-btn , .user-cancel-btn{
+  background-color: #D6D3FF;
+  color: #070154;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 4px 10px;
+ 
+  cursor: pointer;
+}
+.user-cancel-btn{
+  background-color: #D6D3FF;
+  color: #070154;
+}

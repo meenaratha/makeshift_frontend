@@ -17,7 +17,14 @@ import House from '../assets/images/house.png';
 import Retail from '../assets/images/retailshop.png';
 import Mentor from '../assets/images/mentor.png';
 import PDenquiry from '../assets/images/pd_enquiry.png';
+import PDDeliveryPopup from './PDDeliveryPopup';
 function CategoryPopup({ handleClosePopup }) {
+
+    const [isPopupVisible, setIsPopupVisible] = useState(false);
+
+  const handlePopupToggle = () => {
+    setIsPopupVisible(!isPopupVisible);
+  };
   return (
     <>
      <div className="service-model active">
@@ -50,10 +57,14 @@ function CategoryPopup({ handleClosePopup }) {
         <img src={Mentor} className='user-category-svg'/>
             <p>System Working</p>
         </div>
-        <div class="user-category-item">
-        <img src={PDenquiry} className='user-category-svg'/>
-            <p>Material checking</p>
-        </div>
+        {/* Category Item */}
+      <div className="user-category-item" onClick={handlePopupToggle}>
+        <img src={PDenquiry} className="user-category-svg" alt="Enquiry" />
+        <p>Material checking</p>
+      </div>
+
+       {/* Conditionally render the popup */}
+       {isPopupVisible && <PDDeliveryPopup />}
             </div>
             <p className='feedback-txt' style={{ textAlign:'left',padding:'15px 10px',fontSize:'16px',color:'#000000' ,marginTop:'10px'}}>Industry & Factory</p>
             <div className='category-row'>
